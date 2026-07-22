@@ -26,11 +26,19 @@
 // that student using at least two of its properties.
 
 let student1 = {
-name: "Jackson",
-age: 21,
-hasworkpermit: true,
-languages: ["English", "Yoruba"]
+    name: "Olayemi",
+    stateOfOrigin: "Ogun",
+    age: 21,
+    courseOfStudy: ",Design",
+    courseDuration: 4 +"months",
+    nextOfKin: "Miss Sayo",
+    nextofKinContact: "07013885300",
+    languages: ["English","Yoruba","Hausa"]
 }
+
+
+console.log("Hi, my name is"+" "+ student1.name +" and"+ " "+ "I am a student of"+" "+ student1.courseOfStudy);
+
 
 
 
@@ -45,15 +53,28 @@ languages: ["English", "Yoruba"]
 // Use it to create at least three different student
 // objects.
 
-Student1 (name, age, language,hasworkpermit){
-this.name = Dan;
-this. age = 21; 
-this.hasworkpermit = true;
-this.language = English;
+
+function Student (name, age, stateOfOrigin, courseOfStudy, courseDuration, nextOfKin, nextofKinContact, languages){
+    this.name = name;
+    this. age = age;
+    this. stateOfOrigin = stateOfOrigin;
+    this. courseOfStudy = courseOfStudy;
+    this. courseDuration = courseDuration;
+    this. nextOfKin = nextOfKin;
+    this. nextofKinContact = nextofKinContact;
+    this. languages = languages;
 }
-let student1 =new student(dan, 21, English, hasworkpermit)
+let student1 = new Student("Seun",18,"Imo", "Graphic"+" "+ "Development", 3+ "months", "john","070300212323", ["Igbo", "English"]);
+
+let student2 = new Student("Jas",22,"Ogun", "Data"+" "+ "Analysis", 3+ "months", "favour","070300212323", ["Yoruba", "English"]);
+
+let student3 = new Student("Sani",25,"Benue", "Product"+" "+ "Management", 3+ "months", "yomi","070300210100", ["Idoma", "English"]);
 
 
+
+console.log(student2.courseOfStudy);
+console.log(student1);
+console.log(student3);
 
 
 
@@ -67,16 +88,34 @@ let student1 =new student(dan, 21, English, hasworkpermit)
 // Call this method on at least two of your student
 // objects.
 
-student1( name , age, hasworkpermit, language) {
-this. name = Dan; 
-this. Age =  21;
-this.hasworkpermit = hasworkpermit;
-this. Language  = English;
 
-student1 = new  student ("dan", "21", "true", "English");
-student2 = new student ("Dammy", "20",  "false", "Yoruba");
+
+function Student (name, age, stateOfOrigin, courseOfStudy, courseDuration, nextOfKin, nextofKinContact, languages){
+    this.name = name;
+    this. age = age;
+    this. stateOfOrigin = stateOfOrigin;
+    this. courseOfStudy = courseOfStudy;
+    this. courseDuration = courseDuration;
+    this. nextOfKin = nextOfKin;
+    this. nextofKinContact = nextofKinContact;
+    this. languages = languages;
+    this. resumeToClass = function () { alert("Resume to class at exactly 10:00am")};
+    this. participateInClass = function () {alert("Be active in class")};
+    this. leaveSchool = function() {alert("leave class by 3pm")};
 }
+// two student
+const student1 = new Student("Joba", 20, "Osun", "UI/UX", "4 months", "Mr Josh", "08012345678", ["English", "Yoruba"]);
+const student2 = new Student("Amechi", 24, "Owerri", "Product Management", "3 months", "Mr Agbo", "08102345673", ["English", "Yoruba", "Igbo"]);
 
+// calling the method
+student1.resumeToClass();
+student1.leaveSchool();
+student1.participateInClass();
+
+
+student2.resumeToClass();
+student2.leaveSchool();
+student2.participateInClass();
 
 
 // =====================================================
@@ -88,10 +127,10 @@ student2 = new student ("Dammy", "20",  "false", "Yoruba");
 // more than a handful of similar objects.
 
 
-// Using a constructor function is much more efficient than writing individual object literals for three main reasons:
-// 
-// 1. Code Reusability: It acts as a single blueprint. Instead of rewriting the same property keys and methods 
-//    manually for every object, you write the structure once and instantiate new copies with a single line of code.
-// 2. Consistency: It enforces a strict, identical schema across all instances. This eliminates typos in property
-
-
+//  A constructor function is more useful than writing separate object
+// literals because it removes repetition and reduces the chance of
+// mistakes. With object literals, I'd have to retype the same property
+// names for every student, and if I misspell one or forget a property,
+// that object won't match the others. A constructor guarantees every
+// student object has the same shape, since the properties are only
+// defined once inside the function.
